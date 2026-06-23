@@ -1,0 +1,111 @@
+// ===== ACCESORIOS =====
+@use "../utilities/variables" as *;
+@use "../utilities/mixin" as *;
+
+// --- Tabs subcategorías ---
+.subcategorias-tabs {
+    background-color: $color-blanco;
+    border-bottom: 1px solid $color-gris-claro;
+
+    &__inner {
+        display: flex;
+        gap: 0;
+    }
+
+    &__btn {
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid transparent;
+        padding: $espaciado-md $espaciado-lg;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: $color-texto-suave;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover,
+        &.activo {
+            color: $color-primario;
+            border-bottom-color: $color-acento;
+        }
+    }
+}
+
+// --- Título de subsección ---
+.subseccion-titulo {
+    font-family: $fuente-titulo;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: $color-texto;
+    letter-spacing: 1px;
+    margin-bottom: $espaciado-md;
+    @include titulo-linea;
+}
+
+// --- Card accesorio (horizontal) ---
+.accesorio-card {
+    background-color: $color-blanco;
+    border: 1px solid $color-gris-claro;
+    border-radius: $radio-md;
+    overflow: hidden;
+    display: flex;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-3px);
+        @include sombra;
+    }
+
+    &__img {
+        width: 130px;
+        min-width: 130px;
+        height: 130px;
+        object-fit: cover;
+        background-color: $color-gris-medio;
+    }
+
+    &__body {
+        padding: $espaciado-md $espaciado-lg;
+        @include flex-columna;
+        align-items: flex-start;
+        justify-content: center;
+        flex: 1;
+    }
+
+    &__titulo {
+        font-family: $fuente-titulo;
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: $color-texto;
+        margin-bottom: 0.2rem;
+    }
+
+    &__precio {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: $color-acento;
+        letter-spacing: 1px;
+        margin-bottom: $espaciado-sm;
+    }
+
+    &__desc {
+        font-size: 0.82rem;
+        color: $color-texto-suave;
+        margin-bottom: $espaciado-sm;
+    }
+
+    &__btn {
+        @include btn-outline;
+        font-size: 0.75rem;
+        padding: 0.5rem 1.2rem;
+    }
+}
+
+// Divisor
+.cat-divider {
+    border: none;
+    border-top: 1px solid $color-gris-claro;
+    margin: $espaciado-xl 0;
+}

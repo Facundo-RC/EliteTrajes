@@ -1,0 +1,96 @@
+// ===== RESET Y ESTILOS BASE =====
+@use "../utilities/variables" as *;
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: $color-fondo;
+    color: $color-texto;
+    font-family: $fuente-cuerpo;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $fuente-titulo;
+    color: $color-texto;
+    line-height: 1.2;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul, ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    cursor: pointer;
+    font-family: $fuente-cuerpo;
+}
+
+p {
+    color: $color-texto-suave;
+    line-height: 1.8;
+}
+
+// Separador decorativo
+.separador {
+    width: 50px;
+    height: 2px;
+    background-color: $color-acento;
+    margin: $espaciado-sm 0 $espaciado-lg;
+}
+
+.separador--centro {
+    margin: $espaciado-sm auto $espaciado-lg;
+}
+
+// Etiqueta / badge
+.badge-custom {
+    display: inline-block;
+    background-color: $color-gris-claro;
+    color: $color-secundario;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border-radius: $radio-pill;
+}
+
+.badge-acento {
+    background-color: $color-acento;
+    color: $color-blanco;
+}
+
+// Sección con fondo alternado
+.bg-crema {
+    background-color: $color-fondo;
+}
+
+.bg-crema-alt {
+    background-color: $color-fondo-alt;
+}
+
+.bg-oscuro {
+    background-color: $color-primario;
+}

@@ -1,0 +1,269 @@
+// ===== HOME =====
+@use "../utilities/variables" as *;
+@use "../utilities/mixin" as *;
+
+// --- Hero ---
+.hero {
+    min-height: 90vh;
+    background-color: $color-fondo-alt;
+    background-image: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1600&q=80&fit=crop');
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+    @include flex-center;
+    position: relative;
+    overflow: hidden;
+
+    // Overlay crema suave para mantener legibilidad
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba($color-fondo, 0.82);
+        z-index: 0;
+    }
+
+    // Línea decorativa lateral
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background: linear-gradient(to bottom, $color-acento, transparent);
+        z-index: 1;
+    }
+
+    &__contenido {
+        text-align: center;
+        padding: $espaciado-xl $espaciado-lg;
+        position: relative;
+        z-index: 2;
+    }
+
+    &__eyebrow {
+        display: inline-block;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: $color-acento;
+        margin-bottom: $espaciado-md;
+    }
+
+    &__titulo {
+        font-family: $fuente-titulo;
+        font-size: 2.8rem;
+        font-weight: 300;
+        color: $color-texto;
+        line-height: 1.15;
+        letter-spacing: 2px;
+        margin-bottom: $espaciado-lg;
+    }
+
+    &__subtitulo {
+        font-size: 1rem;
+        color: $color-texto-suave;
+        margin-bottom: $espaciado-lg;
+        max-width: 460px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__acciones {
+        display: flex;
+        gap: $espaciado-md;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    &__btn-primario {
+        @include btn-primario;
+    }
+
+    &__btn-outline {
+        @include btn-outline;
+    }
+
+    // Scroll indicator
+    &__scroll {
+        position: absolute;
+        bottom: $espaciado-lg;
+        left: 50%;
+        transform: translateX(-50%);
+        @include flex-columna;
+        gap: 0.3rem;
+        color: $color-texto-suave;
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+
+        &::after {
+            content: '';
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, $color-acento, transparent);
+        }
+    }
+}
+
+// --- Sección genérica ---
+.seccion {
+    padding: $espaciado-xl 0;
+
+    &--alt {
+        background-color: $color-fondo-alt;
+    }
+}
+
+.seccion-titulo {
+    font-family: $fuente-titulo;
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: $color-texto;
+    @include titulo-linea-centro;
+}
+
+.seccion-titulo--izq {
+    @include titulo-linea;
+}
+
+// --- Cards de categorías ---
+.cat-card {
+    background-color: $color-blanco;
+    border: 1px solid $color-gris-claro;
+    border-radius: $radio-md;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+
+    &:hover {
+        transform: translateY(-6px);
+        @include sombra;
+    }
+
+    &__img-wrap {
+        overflow: hidden;
+        height: 200px;
+        background-color: $color-gris-medio;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    &:hover &__img {
+        transform: scale(1.04);
+    }
+
+    &__body {
+        padding: $espaciado-lg;
+    }
+
+    &__label {
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: $color-acento;
+        margin-bottom: $espaciado-xs;
+    }
+
+    &__titulo {
+        font-family: $fuente-titulo;
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: $color-texto;
+        margin-bottom: $espaciado-sm;
+    }
+
+    &__desc {
+        font-size: 0.875rem;
+        color: $color-texto-suave;
+        margin-bottom: $espaciado-md;
+    }
+
+    &__link {
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: $color-primario;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        transition: gap 0.3s ease;
+
+        &::after {
+            content: '→';
+        }
+
+        &:hover {
+            gap: 0.8rem;
+            color: $color-acento;
+        }
+    }
+}
+
+// --- Banner CTA ---
+.cta-banner {
+    background-color: $color-primario;
+    padding: $espaciado-xl $espaciado-lg;
+    text-align: center;
+
+    &__titulo {
+        font-family: $fuente-titulo;
+        font-size: 2rem;
+        font-weight: 300;
+        color: $color-blanco;
+        letter-spacing: 2px;
+        margin-bottom: $espaciado-sm;
+    }
+
+    &__desc {
+        color: rgba($color-blanco, 0.6);
+        font-size: 1rem;
+        margin-bottom: $espaciado-lg;
+    }
+
+    &__btn {
+        @include btn-acento;
+    }
+}
+
+// --- Testimonios / confianza ---
+.stats {
+    padding: $espaciado-xl 0;
+    background-color: $color-blanco;
+    border-top: 1px solid $color-gris-claro;
+    border-bottom: 1px solid $color-gris-claro;
+
+    &__num {
+        font-family: $fuente-titulo;
+        font-size: 2.5rem;
+        font-weight: 400;
+        color: $color-texto;
+    }
+
+    &__label {
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: $color-texto-suave;
+    }
+
+    &__item {
+        text-align: center;
+        padding: $espaciado-md;
+        border-right: 1px solid $color-gris-claro;
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+}

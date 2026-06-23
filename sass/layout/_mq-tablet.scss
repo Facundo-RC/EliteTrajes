@@ -1,0 +1,31 @@
+// ===== MEDIA QUERIES — TABLET =====
+@use "../utilities/variables" as *;
+@use "../utilities/mixin" as *;
+
+@media screen and (min-width: $bp-tablet) {
+
+    .hero__titulo {
+        font-size: 3.5rem;
+    }
+
+    .hero__subtitulo {
+        font-size: 1.1rem;
+    }
+
+    .seccion-titulo {
+        font-size: 2.2rem;
+    }
+
+    .traje-card__img,
+    .accesorio-card__img {
+        height: 300px;
+    }
+
+    .contacto-info {
+        padding-right: $espaciado-xl;
+    }
+
+    .nosotros-grid {
+        align-items: center;
+    }
+}

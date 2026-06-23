@@ -1,0 +1,157 @@
+// ===== MIXINS =====
+@use "variables" as *;
+@use "sass:color";
+
+// Flex centrado
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Flex entre extremos
+@mixin flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+// Flex columna centrada
+@mixin flex-columna {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+// Grid genérico
+@mixin grilla($column, $row) {
+    display: grid;
+    grid-template-columns: $column;
+    grid-template-rows: $row;
+    row-gap: $espaciado-md;
+    column-gap: $espaciado-md;
+    padding: $espaciado-md;
+}
+
+// Imagen responsive
+@mixin img-responsive {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+// Botón oscuro (primario)
+@mixin btn-primario {
+    background-color: $color-primario;
+    color: $color-blanco;
+    border: 2px solid $color-primario;
+    padding: 0.75rem 2rem;
+    font-family: $fuente-cuerpo;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: $radio-sm;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: transparent;
+        color: $color-primario;
+        transform: translateY(-2px);
+    }
+}
+
+// Botón outline (secundario)
+@mixin btn-outline {
+    background-color: transparent;
+    color: $color-primario;
+    border: 2px solid $color-primario;
+    padding: 0.75rem 2rem;
+    font-family: $fuente-cuerpo;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: $radio-sm;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: $color-primario;
+        color: $color-blanco;
+        transform: translateY(-2px);
+    }
+}
+
+// Botón acento dorado
+@mixin btn-acento {
+    background-color: $color-acento;
+    color: $color-blanco;
+    border: 2px solid $color-acento;
+    padding: 0.75rem 2rem;
+    font-family: $fuente-cuerpo;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: $radio-sm;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: $color-acento-hover;
+        border-color: $color-acento-hover;
+        transform: translateY(-2px);
+    }
+}
+
+// Sombra suave
+@mixin sombra-sm {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+@mixin sombra {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+@mixin sombra-lg {
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+}
+
+// Línea decorativa bajo título
+@mixin titulo-linea($color: $color-acento) {
+    position: relative;
+    padding-bottom: $espaciado-sm;
+
+    &::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 2px;
+        background-color: $color;
+        margin-top: 0.6rem;
+    }
+}
+
+// Línea centrada
+@mixin titulo-linea-centro($color: $color-acento) {
+    position: relative;
+    padding-bottom: $espaciado-sm;
+
+    &::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 2px;
+        background-color: $color;
+        margin: 0.6rem auto 0;
+    }
+}

@@ -1,0 +1,158 @@
+// ===== TRAJES =====
+@use "../utilities/variables" as *;
+@use "../utilities/mixin" as *;
+
+// --- Page header ---
+.page-hero {
+    background-color: $color-fondo-alt;
+    padding: $espaciado-xl 0;
+    border-bottom: 1px solid $color-gris-claro;
+    text-align: center;
+
+    &__eyebrow {
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: $color-acento;
+        margin-bottom: $espaciado-sm;
+    }
+
+    &__titulo {
+        font-family: $fuente-titulo;
+        font-size: 2.5rem;
+        font-weight: 300;
+        color: $color-texto;
+        letter-spacing: 2px;
+        margin-bottom: $espaciado-sm;
+    }
+
+    &__desc {
+        color: $color-texto-suave;
+        font-size: 0.95rem;
+    }
+}
+
+// --- Filtros ---
+.filtros-bar {
+    padding: $espaciado-md 0;
+    border-bottom: 1px solid $color-gris-claro;
+    background-color: $color-blanco;
+
+    &__inner {
+        @include flex-between;
+        flex-wrap: wrap;
+        gap: $espaciado-sm;
+    }
+
+    &__label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: $color-texto-suave;
+    }
+
+    &__grupo {
+        display: flex;
+        gap: $espaciado-sm;
+        flex-wrap: wrap;
+    }
+
+    &__btn {
+        background: transparent;
+        border: 1px solid $color-gris-claro;
+        border-radius: $radio-pill;
+        padding: 0.4rem 1.1rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: $color-secundario;
+        transition: all 0.25s ease;
+
+        &:hover,
+        &.activo {
+            background-color: $color-primario;
+            border-color: $color-primario;
+            color: $color-blanco;
+        }
+    }
+}
+
+// --- Card de traje ---
+.traje-card {
+    background-color: $color-blanco;
+    border: 1px solid $color-gris-claro;
+    border-radius: $radio-md;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+
+    &:hover {
+        transform: translateY(-5px);
+        @include sombra;
+    }
+
+    &__img-wrap {
+        overflow: hidden;
+        position: relative;
+        background-color: $color-gris-medio;
+    }
+
+    &__img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    &:hover &__img {
+        transform: scale(1.04);
+    }
+
+    &__badge {
+        position: absolute;
+        top: $espaciado-md;
+        left: $espaciado-md;
+        background-color: $color-blanco;
+        color: $color-texto;
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        padding: 0.3rem 0.7rem;
+        border-radius: $radio-pill;
+    }
+
+    &__body {
+        padding: $espaciado-lg;
+    }
+
+    &__titulo {
+        font-family: $fuente-titulo;
+        font-size: 1.3rem;
+        font-weight: 400;
+        color: $color-texto;
+        margin-bottom: 0.3rem;
+    }
+
+    &__precio {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: $color-acento;
+        letter-spacing: 1px;
+        margin-bottom: $espaciado-sm;
+    }
+
+    &__desc {
+        font-size: 0.85rem;
+        color: $color-texto-suave;
+        margin-bottom: $espaciado-md;
+    }
+
+    &__btn {
+        @include btn-primario;
+        width: 100%;
+        text-align: center;
+        font-size: 0.8rem;
+    }
+}

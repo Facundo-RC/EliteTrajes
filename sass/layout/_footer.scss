@@ -1,0 +1,68 @@
+// ===== FOOTER =====
+@use "../utilities/variables" as *;
+@use "../utilities/mixin" as *;
+
+.site-footer {
+    background-color: $color-primario;
+    color: rgba($color-blanco, 0.7);
+    padding: $espaciado-xl 0 $espaciado-lg;
+
+    &__logo {
+        font-family: $fuente-titulo;
+        font-size: 1.8rem;
+        font-weight: 400;
+        color: $color-blanco;
+        margin-bottom: $espaciado-sm;
+
+        span {
+            color: $color-acento;
+        }
+    }
+
+    &__desc {
+        font-size: 0.875rem;
+        line-height: 1.8;
+        color: rgba($color-blanco, 0.5);
+        max-width: 250px;
+    }
+
+    &__titulo {
+        font-family: $fuente-cuerpo;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: $color-blanco;
+        margin-bottom: $espaciado-md;
+    }
+
+    &__links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            color: rgba($color-blanco, 0.5);
+            font-size: 0.875rem;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $color-acento;
+            }
+        }
+    }
+
+    &__divider {
+        border-color: rgba($color-blanco, 0.1);
+        margin: $espaciado-lg 0 $espaciado-md;
+    }
+
+    &__bottom {
+        font-size: 0.8rem;
+        color: rgba($color-blanco, 0.3);
+    }
+}

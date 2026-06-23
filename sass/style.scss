@@ -1,0 +1,25 @@
+// ===== ENTRADA PRINCIPAL =====
+// Importa todos los módulos con @use
+
+// --- Utilidades ---
+@use "utilities/variables" as *;
+@use "utilities/mixin" as *;
+@use "utilities/listas";
+
+// --- Base ---
+@use "base/reset";
+
+// --- Layout ---
+@use "layout/header";
+@use "layout/footer";
+
+// --- Páginas ---
+@use "pages/home";
+@use "pages/trajes";
+@use "pages/accesorios";
+@use "pages/nosotros";
+@use "pages/contacto";
+
+// --- Media Queries (siempre al final) ---
+@use "layout/mq-tablet";
+@use "layout/mq-desktop";

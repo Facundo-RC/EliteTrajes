@@ -1,0 +1,146 @@
+// ===== CONTACTO =====
+@use "../utilities/variables" as *;
+@use "../utilities/mixin" as *;
+@use "sass:color";
+
+// --- Sección principal ---
+.contacto-seccion {
+    padding: $espaciado-xl 0;
+}
+
+// --- Info ---
+.contacto-info {
+    &__titulo {
+        font-family: $fuente-titulo;
+        font-size: 1.8rem;
+        font-weight: 300;
+        color: $color-texto;
+        margin-bottom: $espaciado-md;
+        @include titulo-linea;
+    }
+
+    &__desc {
+        font-size: 0.9rem;
+        color: $color-texto-suave;
+        margin-bottom: $espaciado-xl;
+        line-height: 1.8;
+    }
+
+    &__item {
+        display: flex;
+        align-items: flex-start;
+        gap: $espaciado-md;
+        margin-bottom: $espaciado-lg;
+    }
+
+    &__icono {
+        width: 42px;
+        height: 42px;
+        background-color: $color-gris-claro;
+        border-radius: 50%;
+        @include flex-center;
+        font-size: 1rem;
+        flex-shrink: 0;
+        color: $color-acento;
+    }
+
+    &__nombre {
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: $color-texto;
+        margin-bottom: 0.2rem;
+    }
+
+    &__valor {
+        font-size: 0.9rem;
+        color: $color-texto-suave;
+
+        a {
+            color: $color-texto-suave;
+            transition: color 0.3s ease;
+
+            &:hover {
+                color: $color-acento;
+            }
+        }
+    }
+}
+
+// --- Formulario ---
+.contacto-form {
+    background-color: $color-blanco;
+    border: 1px solid $color-gris-claro;
+    border-radius: $radio-md;
+    padding: $espaciado-xl;
+
+    &__titulo {
+        font-family: $fuente-titulo;
+        font-size: 1.8rem;
+        font-weight: 300;
+        color: $color-texto;
+        margin-bottom: $espaciado-lg;
+    }
+
+    .form-label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: $color-texto;
+        margin-bottom: 0.4rem;
+    }
+
+    .form-control,
+    .form-select {
+        background-color: $color-fondo;
+        border: 1px solid $color-gris-claro;
+        border-radius: $radio-sm;
+        font-family: $fuente-cuerpo;
+        font-size: 0.9rem;
+        color: $color-texto;
+        padding: 0.75rem $espaciado-md;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+        &:focus {
+            background-color: $color-blanco;
+            border-color: $color-acento;
+            box-shadow: 0 0 0 3px rgba($color-acento, 0.15);
+            color: $color-texto;
+        }
+
+        &::placeholder {
+            color: $color-gris-medio;
+        }
+    }
+
+    textarea.form-control {
+        resize: vertical;
+        min-height: 130px;
+    }
+
+    &__btn {
+        @include btn-primario;
+        width: 100%;
+        text-align: center;
+        margin-top: $espaciado-sm;
+        font-size: 0.85rem;
+    }
+}
+
+// --- Mapa placeholder ---
+.mapa-placeholder {
+    background-color: $color-gris-claro;
+    height: 280px;
+    border-radius: $radio-md;
+    @include flex-center;
+    margin-top: $espaciado-xl;
+    border: 1px solid $color-gris-medio;
+
+    p {
+        font-size: 0.875rem;
+        color: $color-texto-suave;
+        letter-spacing: 1px;
+    }
+}

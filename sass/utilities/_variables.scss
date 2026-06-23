@@ -1,0 +1,41 @@
+// ===== PALETA CREMA + GRIS CLARO (moderna) =====
+$color-primario:     #2D2D2D;   // casi negro suave — textos y botones
+$color-secundario:   #6B6B6B;   // gris medio — subtítulos, iconos
+$color-acento:       #C8A97E;   // dorado arena — acento premium
+$color-acento-hover: #B8966A;   // dorado más oscuro para hover
+
+$color-fondo:        #FDFAF5;   // crema muy suave — fondo principal
+$color-fondo-alt:    #F5F1EA;   // crema un poco más oscura — secciones alternadas
+$color-gris-claro:   #EEECE8;   // gris cálido claro — bordes, separadores
+$color-gris-medio:   #D4D0C8;   // gris neutro — placeholders
+$color-blanco:       #FFFFFF;
+
+$color-texto:        #2D2D2D;   // texto principal
+$color-texto-suave:  #7A7A7A;   // texto secundario / descripción
+
+// Override Bootstrap
+$primary:   $color-primario;
+$secondary: $color-secundario;
+
+// ===== TIPOGRAFÍA =====
+$fuente-titulo:  'Cormorant Garamond', 'Playfair Display', serif;
+$fuente-cuerpo:  'Inter', 'Lato', sans-serif;
+
+// ===== ESPACIADO =====
+$espaciado-xs:  0.25rem;
+$espaciado-sm:  0.5rem;
+$espaciado-md:  1rem;
+$espaciado-lg:  2rem;
+$espaciado-xl:  4rem;
+$espaciado-xxl: 7rem;
+
+// ===== BORDES =====
+$radio-sm:   4px;
+$radio-md:   8px;
+$radio-lg:   16px;
+$radio-pill: 50px;
+
+// ===== BREAKPOINTS =====
+$bp-tablet:  768px;
+$bp-desktop: 1024px;
+$bp-wide:    1400px;
