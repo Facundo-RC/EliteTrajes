@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Tests de la lógica
+        run: npm test
+
+      - name: El CSS publicado está compilado desde el Sass actual
+        run: |
+          npm run build
+          git diff --exit-code css/main.css || (echo "css/main.css no coincide con sass/. Corré npm run build y commiteá el resultado." && exit 1)
+
+      - name: Instalar el navegador de Playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: Tests en el navegador (escritorio y celular)
+        run: npm run test:e2e
+
+      - name: Guardar el reporte si algo falla
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporte-playwright
+          path: test-results/
+          retention-days: 7
