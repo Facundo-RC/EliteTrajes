@@ -9,6 +9,11 @@
 // --- Base ---
 @use "base/reset";
 
+// --- Componentes ---
+@use "components/accesibilidad";
+@use "components/catalogo";
+@use "components/reserva";
+
 // --- Layout ---
 @use "layout/header";
 @use "layout/footer";

@@ -21,6 +21,16 @@
         height: 300px;
     }
 
+    .subcategorias-tabs__btn {
+        padding: $espaciado-md $espaciado-lg;
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+    }
+
+    .filtros-bar__controles {
+        width: auto;
+    }
+
     .contacto-info {
         padding-right: $espaciado-xl;
     }

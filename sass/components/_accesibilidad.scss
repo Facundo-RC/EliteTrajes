@@ -1,0 +1,41 @@
+// ===== ACCESIBILIDAD =====
+@use "../utilities/variables" as *;
+
+// Enlace para saltar directo al contenido con el teclado.
+.saltar-contenido {
+    position: absolute;
+    left: $espaciado-md;
+    top: -100px;
+    z-index: 2000;
+    background-color: $color-primario;
+    color: $color-blanco;
+    padding: $espaciado-sm $espaciado-md;
+    border-radius: $radio-sm;
+
+    &:focus {
+        top: $espaciado-md;
+        color: $color-blanco;
+    }
+}
+
+// Foco visible para quien navega con teclado, sin marcarlo al hacer clic.
+a,
+button,
+input,
+select,
+textarea {
+    &:focus-visible {
+        outline: 2px solid $color-acento-hover;
+        outline-offset: 2px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
