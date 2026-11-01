@@ -65,6 +65,17 @@ test.describe('Catálogo de trajes', () => {
         await expect(page).toHaveURL(/contacto\.html\?prenda=traje-gris-perla/);
         await expect(page.getByLabel(/Traje Gris Perla/)).toBeChecked();
     });
+
+    test('al llegar a la reserva, la barra fija no tapa el formulario', async ({ page }) => {
+        await page.goto('pages/contacto.html?prenda=traje-gris-perla#reserva');
+        await expect(page.locator('#lista-prendas input')).toHaveCount(14);
+        // Vuelve a saltar al ancla ya con todo cargado, como pasa al tocar el enlace.
+        await page.evaluate(() => { location.hash = ''; location.hash = 'reserva'; });
+        await page.waitForTimeout(800);
+        const barra = await page.locator('nav.navbar').boundingBox();
+        const formulario = await page.locator('#reserva').boundingBox();
+        expect(formulario.y).toBeGreaterThanOrEqual(barra.y + barra.height);
+    });
 });
 
 test.describe('Accesorios', () => {

@@ -66,11 +66,14 @@ Las tarjetas se arman con `createElement` y `textContent`, nunca con `innerHTML`
 | Tipo | Cantidad | Qué cubre |
 |---|---|---|
 | Lógica (`npm test`) | 33 | Integridad de los datos, filtros, búsqueda con tildes, orden, cálculo de días (cambios de mes y de año), presupuesto y descuento, validación de cada campo, valores límite (hoy, 14 y 15 días) |
-| Navegador (`npm run test:e2e`) | 17 × 2 dispositivos | Flujos completos en escritorio y en celular: filtrar, buscar, ordenar, pestañas, presupuesto, errores del formulario, confirmar, recargar y cancelar una reserva, sin errores de JavaScript y sin scroll horizontal |
+| Navegador (`npm run test:e2e`) | 18 × 2 dispositivos | Flujos completos en escritorio y en celular: filtrar, buscar, ordenar, pestañas, presupuesto, errores del formulario, confirmar, recargar y cancelar una reserva, sin errores de JavaScript y sin scroll horizontal |
 
 GitHub Actions corre las dos suites en cada push y además verifica que `css/main.css` esté compilado desde el Sass actual.
 
-Probando el sitio apareció un bug que ya existía: en pantallas de 375 px las pestañas de accesorios se salían del ancho. Quedó corregido y cubierto por el test de scroll horizontal.
+Las pruebas encontraron dos bugs, y cada uno quedó corregido y cubierto por un test:
+
+- En pantallas de 375 px las pestañas de accesorios se salían del ancho (ya pasaba antes de este trabajo).
+- Al tocar *Reservar*, la barra de navegación fija tapaba el comienzo del formulario. Se resolvió con `scroll-padding-top`.
 
 ## Accesibilidad
 
