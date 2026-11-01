@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Reservá tu traje online con presupuesto al instante o escribinos.">
+    <meta name="theme-color" content="#2D2D2D">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,6 +14,8 @@
     <title>Contacto | Élite Trajes</title>
 </head>
 <body>
+
+    <a class="saltar-contenido" href="#contenido">Saltar al contenido</a>
 
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg sticky-top">
@@ -35,13 +40,13 @@
     <section class="page-hero">
         <div class="container">
             <p class="page-hero__eyebrow">Estamos para ayudarte</p>
-            <h1 class="page-hero__titulo">Contacto</h1>
-            <p class="page-hero__desc">Consultanos disponibilidad y reservas — respondemos en menos de 24hs</p>
+            <h1 class="page-hero__titulo">Contacto y reservas</h1>
+            <p class="page-hero__desc">Reservá online o escribinos: respondemos en menos de 24 horas</p>
         </div>
     </section>
 
     <!-- CONTACTO -->
-    <section class="contacto-seccion">
+    <main id="contenido" class="contacto-seccion">
         <div class="container">
             <div class="row g-5">
 
@@ -83,61 +88,102 @@
                     </div>
                 </div>
 
-                <!-- FORMULARIO -->
+                <!-- RESERVA -->
                 <div class="col-12 col-md-8">
-                    <div class="contacto-form">
-                        <h2 class="contacto-form__titulo">Envianos un mensaje</h2>
-                        <form action="#" method="POST">
+                    <div class="contacto-form" id="reserva">
+                        <h2 class="contacto-form__titulo">Reservá tu traje</h2>
+                        <p class="contacto-form__intro">Elegí las prendas y las fechas: el presupuesto se calcula al instante. Desde 3 días de alquiler tenés 10% de descuento.</p>
+
+                        <form id="form-reserva" novalidate>
                             <div class="row g-3">
 
                                 <div class="col-12 col-sm-6">
-                                    <label class="form-label" for="nombre">Nombre</label>
-                                    <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Tu nombre" required>
-                                </div>
-
-                                <div class="col-12 col-sm-6">
-                                    <label class="form-label" for="apellido">Apellido</label>
-                                    <input type="text" id="apellido" name="apellido" class="form-control" placeholder="Tu apellido" required>
+                                    <label class="form-label" for="nombre">Nombre y apellido</label>
+                                    <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Tu nombre" autocomplete="name" required aria-describedby="error-nombre">
+                                    <p class="invalid-feedback" id="error-nombre"></p>
                                 </div>
 
                                 <div class="col-12 col-sm-6">
                                     <label class="form-label" for="email">Email</label>
-                                    <input type="email" id="email" name="email" class="form-control" placeholder="tu@email.com" required>
+                                    <input type="email" id="email" name="email" class="form-control" placeholder="tu@email.com" autocomplete="email" required aria-describedby="error-email">
+                                    <p class="invalid-feedback" id="error-email"></p>
                                 </div>
 
                                 <div class="col-12 col-sm-6">
                                     <label class="form-label" for="telefono">Teléfono (opcional)</label>
-                                    <input type="tel" id="telefono" name="telefono" class="form-control" placeholder="+54 11 ...">
+                                    <input type="tel" id="telefono" name="telefono" class="form-control" placeholder="+54 11 ..." autocomplete="tel" aria-describedby="error-telefono">
+                                    <p class="invalid-feedback" id="error-telefono"></p>
                                 </div>
 
-                                <div class="col-12">
+                                <div class="col-12 col-sm-6">
                                     <label class="form-label" for="evento">Tipo de evento</label>
                                     <select id="evento" name="evento" class="form-select">
                                         <option value="">Seleccioná una opción</option>
-                                        <option value="boda">Boda</option>
-                                        <option value="graduacion">Graduación</option>
-                                        <option value="gala">Gala / Cena formal</option>
-                                        <option value="otro">Otro</option>
+                                        <option value="Boda">Boda</option>
+                                        <option value="Graduación">Graduación</option>
+                                        <option value="Gala / Cena formal">Gala / Cena formal</option>
+                                        <option value="Otro">Otro</option>
                                     </select>
                                 </div>
 
-                                <div class="col-12">
-                                    <label class="form-label" for="mensaje">Mensaje</label>
-                                    <textarea id="mensaje" name="mensaje" class="form-control" placeholder="Contanos sobre tu evento, fecha y talle..."></textarea>
+                                <fieldset class="col-12 prendas" aria-describedby="error-prendas">
+                                    <legend class="form-label">Prendas</legend>
+                                    <div class="prendas__lista" id="lista-prendas">
+                                        <p class="prendas__cargando">Cargando prendas…</p>
+                                    </div>
+                                    <p class="invalid-feedback" id="error-prendas"></p>
+                                </fieldset>
+
+                                <div class="col-12 col-sm-6">
+                                    <label class="form-label" for="retiro">Retiro</label>
+                                    <input type="date" id="retiro" name="retiro" class="form-control" required aria-describedby="error-retiro">
+                                    <p class="invalid-feedback" id="error-retiro"></p>
+                                </div>
+
+                                <div class="col-12 col-sm-6">
+                                    <label class="form-label" for="devolucion">Devolución</label>
+                                    <input type="date" id="devolucion" name="devolucion" class="form-control" required aria-describedby="error-devolucion">
+                                    <p class="invalid-feedback" id="error-devolucion"></p>
                                 </div>
 
                                 <div class="col-12">
-                                    <button type="submit" class="contacto-form__btn">Enviar Consulta</button>
+                                    <label class="form-label" for="mensaje">Comentarios (opcional)</label>
+                                    <textarea id="mensaje" name="mensaje" class="form-control" placeholder="Talle, fecha del evento o cualquier detalle que nos ayude"></textarea>
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="presupuesto" aria-live="polite">
+                                        <p class="presupuesto__titulo">Presupuesto</p>
+                                        <dl class="presupuesto__filas">
+                                            <div><dt>Prendas</dt><dd id="presu-prendas">0</dd></div>
+                                            <div><dt>Días de alquiler</dt><dd id="presu-dias">—</dd></div>
+                                            <div><dt>Subtotal</dt><dd id="presu-subtotal">$0</dd></div>
+                                            <div><dt>Descuento</dt><dd id="presu-descuento">$0</dd></div>
+                                            <div class="presupuesto__total"><dt>Total</dt><dd id="presu-total">$0</dd></div>
+                                        </dl>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <button type="submit" class="contacto-form__btn">Confirmar reserva</button>
+                                    <p class="contacto-form__nota">Sitio de demostración: la reserva se guarda sólo en este navegador y no se envía a ningún lado.</p>
                                 </div>
 
                             </div>
                         </form>
+
+                        <div class="confirmacion" id="confirmacion" tabindex="-1" hidden></div>
                     </div>
+
+                    <section class="mis-reservas" id="mis-reservas" aria-labelledby="titulo-mis-reservas" hidden>
+                        <h2 class="mis-reservas__titulo" id="titulo-mis-reservas">Tus reservas</h2>
+                        <ul class="mis-reservas__lista" id="lista-reservas"></ul>
+                    </section>
                 </div>
 
             </div>
         </div>
-    </section>
+    </main>
 
     <!-- MAPA -->
     <div class="container pb-5">
@@ -179,5 +225,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../js/contacto.js"></script>
 </body>
 </html>

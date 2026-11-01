@@ -1,0 +1,202 @@
+// ===== FORMULARIO DE RESERVA =====
+@use "../utilities/variables" as *;
+@use "../utilities/mixin" as *;
+
+.contacto-form {
+    &__intro {
+        color: $color-texto-suave;
+        font-size: 0.9rem;
+        margin-top: -$espaciado-md;
+        margin-bottom: $espaciado-lg;
+    }
+
+    &__nota {
+        font-size: 0.75rem;
+        color: $color-texto-suave;
+        text-align: center;
+        margin-top: $espaciado-sm;
+    }
+}
+
+// --- Selección de prendas ---
+.prendas {
+    border: 0;
+    margin: 0;
+    padding-top: 0;
+
+    &__lista {
+        display: grid;
+        gap: $espaciado-md;
+        border: 1px solid $color-gris-claro;
+        border-radius: $radio-sm;
+        padding: $espaciado-md;
+        background-color: $color-fondo;
+
+        &.is-invalid {
+            border-color: var(--bs-form-invalid-border-color);
+        }
+    }
+
+    &__grupo-titulo {
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: $color-acento-hover;
+        margin-bottom: 0.3rem;
+    }
+
+    &__opcion {
+        .form-check-label {
+            @include flex-between;
+            gap: $espaciado-sm;
+            width: 100%;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .form-check-input:checked {
+            background-color: $color-primario;
+            border-color: $color-primario;
+        }
+    }
+
+    &__precio {
+        color: $color-texto-suave;
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+
+    &__cargando {
+        color: $color-texto-suave;
+        font-size: 0.9rem;
+    }
+}
+
+// --- Presupuesto ---
+.presupuesto {
+    background-color: $color-fondo-alt;
+    border-radius: $radio-md;
+    padding: $espaciado-md $espaciado-lg;
+
+    &__titulo {
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: $espaciado-sm;
+    }
+
+    &__filas {
+        margin: 0;
+
+        div {
+            @include flex-between;
+            padding: 0.3rem 0;
+            border-bottom: 1px solid $color-gris-claro;
+            font-size: 0.9rem;
+        }
+
+        dt {
+            font-weight: 400;
+            color: $color-texto-suave;
+        }
+
+        dd {
+            margin: 0;
+            font-variant-numeric: tabular-nums;
+        }
+    }
+
+    &__total {
+        border-bottom: 0 !important;
+        padding-top: $espaciado-sm !important;
+
+        dt,
+        dd {
+            font-family: $fuente-titulo;
+            font-size: 1.4rem;
+            color: $color-texto !important;
+        }
+    }
+}
+
+// --- Confirmación ---
+.confirmacion {
+    text-align: center;
+    padding: $espaciado-lg 0;
+
+    &:focus {
+        outline: none;
+    }
+
+    &__eyebrow {
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: $color-acento-hover;
+    }
+
+    &__codigo {
+        font-family: $fuente-titulo;
+        font-size: 2.6rem;
+        letter-spacing: 3px;
+        margin: $espaciado-sm 0;
+    }
+
+    &__texto {
+        color: $color-texto-suave;
+        margin-bottom: $espaciado-md;
+    }
+
+    &__btn {
+        @include btn-outline;
+        font-size: 0.75rem;
+    }
+}
+
+// --- Reservas guardadas ---
+.mis-reservas {
+    margin-top: $espaciado-lg;
+
+    &__titulo {
+        font-size: 1.5rem;
+        font-weight: 300;
+        margin-bottom: $espaciado-md;
+    }
+
+    &__lista {
+        padding: 0;
+        margin: 0;
+    }
+
+    &__item {
+        @include flex-between;
+        gap: $espaciado-md;
+        background-color: $color-blanco;
+        border: 1px solid $color-gris-claro;
+        border-radius: $radio-sm;
+        padding: $espaciado-md;
+        margin-bottom: $espaciado-sm;
+    }
+
+    &__codigo {
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        margin-bottom: 0.1rem;
+    }
+
+    &__detalle {
+        font-size: 0.85rem;
+        color: $color-texto-suave;
+        margin-bottom: 0;
+    }
+
+    &__cancelar {
+        @include btn-outline;
+        padding: 0.4rem 1rem;
+        font-size: 0.7rem;
+        flex-shrink: 0;
+    }
+}
