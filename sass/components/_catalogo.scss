@@ -1,0 +1,69 @@
+// ===== CATÁLOGO: BÚSQUEDA, ORDEN Y AVISOS =====
+@use "../utilities/variables" as *;
+@use "../utilities/mixin" as *;
+
+.filtros-bar {
+    &__controles {
+        display: flex;
+        gap: $espaciado-sm;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    &__buscador,
+    &__orden {
+        border: 1px solid $color-gris-claro;
+        border-radius: $radio-pill;
+        background-color: $color-fondo;
+        padding: 0.45rem 1rem;
+        font-size: 0.85rem;
+        color: $color-texto;
+    }
+
+    &__buscador {
+        flex: 1 1 200px;
+        min-width: 0;
+    }
+
+    &__orden {
+        flex: 0 1 220px;
+    }
+}
+
+.catalogo__contador {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: $color-texto-suave;
+    margin-bottom: $espaciado-md;
+}
+
+// Mensajes de estado: lista vacía o error de carga.
+.aviso {
+    background-color: $color-blanco;
+    border: 1px dashed $color-gris-medio;
+    border-radius: $radio-md;
+    padding: $espaciado-xl $espaciado-lg;
+    text-align: center;
+
+    &--error {
+        border-style: solid;
+        border-color: #d9a3a3;
+        background-color: #fdf3f3;
+    }
+
+    &__titulo {
+        font-family: $fuente-titulo;
+        font-size: 1.5rem;
+        margin-bottom: $espaciado-sm;
+    }
+
+    &__texto {
+        color: $color-texto-suave;
+        margin-bottom: $espaciado-md;
+    }
+
+    &__btn {
+        @include btn-outline;
+        font-size: 0.75rem;
+    }
+}

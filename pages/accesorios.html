@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Corbatas, moños y calzado formal en alquiler para completar tu look.">
+    <meta name="theme-color" content="#2D2D2D">
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,6 +14,8 @@
     <title>Accesorios | Élite Trajes</title>
 </head>
 <body>
+
+    <a class="saltar-contenido" href="#contenido">Saltar al contenido</a>
 
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg sticky-top">
@@ -44,83 +49,21 @@
     <div class="subcategorias-tabs">
         <div class="container">
             <div class="subcategorias-tabs__inner">
-                <button class="subcategorias-tabs__btn activo" data-tab="todos">Todos</button>
-                <button class="subcategorias-tabs__btn" data-tab="corbatas">Corbatas</button>
-                <button class="subcategorias-tabs__btn" data-tab="calzado">Calzado</button>
+                <button class="subcategorias-tabs__btn activo" data-tab="todos" type="button" aria-pressed="false">Todos</button>
+                <button class="subcategorias-tabs__btn" data-tab="corbatas" type="button" aria-pressed="false">Corbatas</button>
+                <button class="subcategorias-tabs__btn" data-tab="calzado" type="button" aria-pressed="false">Calzado</button>
             </div>
         </div>
     </div>
 
     <!-- CONTENIDO -->
-    <section class="seccion">
+    <main id="contenido" class="seccion">
         <div class="container">
 
             <!-- Bloque Corbatas -->
             <div id="bloque-corbatas">
                 <h2 class="subseccion-titulo">Corbatas &amp; Moños</h2>
-                <div class="row g-3">
-
-                    <div class="col-12 col-md-6">
-                        <article class="accesorio-card">
-                            <img class="accesorio-card__img" src="https://images.unsplash.com/photo-1633353240079-d5197fdff535?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Corbata roja seda">
-                            <div class="accesorio-card__body">
-                                <h3 class="accesorio-card__titulo">Corbata Roja Seda</h3>
-                                <p class="accesorio-card__precio">$1.200 / día</p>
-                                <p class="accesorio-card__desc">Seda natural, textura lisa. Ancho estándar.</p>
-                                <a href="contacto.html" class="accesorio-card__btn">Consultar</a>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="col-12 col-md-6">
-                        <article class="accesorio-card">
-                            <img class="accesorio-card__img" src="https://plus.unsplash.com/premium_photo-1723924810262-c67a0950f311?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Corbata bordó estampada">
-                            <div class="accesorio-card__body">
-                                <h3 class="accesorio-card__titulo">Corbata Bordó Estampada</h3>
-                                <p class="accesorio-card__precio">$1.400 / día</p>
-                                <p class="accesorio-card__desc">Estampado floral sutil, ideal para bodas de otoño.</p>
-                                <a href="contacto.html" class="accesorio-card__btn">Consultar</a>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="col-12 col-md-6">
-                        <article class="accesorio-card">
-                            <img class="accesorio-card__img" src="https://images.unsplash.com/photo-1628009658182-6df033109021?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Q29yYmF0YSUyME5lZ3JhfGVufDB8fDB8fHww" alt="Corbata negra clásica">
-                            <div class="accesorio-card__body">
-                                <h3 class="accesorio-card__titulo">Corbata Negra Clásica</h3>
-                                <p class="accesorio-card__precio">$1.100 / día</p>
-                                <p class="accesorio-card__desc">La opción más versátil para cualquier evento formal.</p>
-                                <a href="contacto.html" class="accesorio-card__btn">Consultar</a>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="col-12 col-md-6">
-                        <article class="accesorio-card">
-                            <img class="accesorio-card__img" src="https://images.unsplash.com/photo-1522968439036-e6338d0ed84f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Moño negro esmoquin">
-                            <div class="accesorio-card__body">
-                                <h3 class="accesorio-card__titulo">Moño Negro (Esmoquin)</h3>
-                                <p class="accesorio-card__precio">$900 / día</p>
-                                <p class="accesorio-card__desc">Moño de seda para esmoquin. Ajustable.</p>
-                                <a href="contacto.html" class="accesorio-card__btn">Consultar</a>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="col-12 col-md-6">
-                        <article class="accesorio-card">
-                            <img class="accesorio-card__img" src="https://images.unsplash.com/photo-1754814973276-1e837ee69a45?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Corbata azul navy">
-                            <div class="accesorio-card__body">
-                                <h3 class="accesorio-card__titulo">Corbata Azul Navy</h3>
-                                <p class="accesorio-card__precio">$1.200 / día</p>
-                                <p class="accesorio-card__desc">Perfecta para combinar con traje gris o azul marino.</p>
-                                <a href="contacto.html" class="accesorio-card__btn">Consultar</a>
-                            </div>
-                        </article>
-                    </div>
-
-                </div>
+                <div class="row g-3" id="grilla-corbatas"></div>
             </div><!-- /bloque-corbatas -->
 
             <hr class="cat-divider" id="divider-tabs">
@@ -128,49 +71,11 @@
             <!-- Bloque Calzado -->
             <div id="bloque-calzado">
                 <h2 class="subseccion-titulo">Calzado Formal</h2>
-                <div class="row g-3">
-
-                    <div class="col-12 col-md-6">
-                        <article class="accesorio-card">
-                            <img class="accesorio-card__img" src="https://images.unsplash.com/photo-1657863598793-7a46461dcd4d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Zapato negro Oxford">
-                            <div class="accesorio-card__body">
-                                <h3 class="accesorio-card__titulo">Zapato Negro Oxford</h3>
-                                <p class="accesorio-card__precio">$2.500 / día</p>
-                                <p class="accesorio-card__desc">Cuero genuino. Tallas 38 a 46.</p>
-                                <a href="contacto.html" class="accesorio-card__btn">Consultar</a>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="col-12 col-md-6">
-                        <article class="accesorio-card">
-                            <img class="accesorio-card__img" src="https://images.unsplash.com/photo-1760616172899-0681b97a2de3?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Zapato charol gala">
-                            <div class="accesorio-card__body">
-                                <h3 class="accesorio-card__titulo">Zapato Charol Gala</h3>
-                                <p class="accesorio-card__precio">$3.200 / día</p>
-                                <p class="accesorio-card__desc">Charol brillante para esmoquin y galas formales.</p>
-                                <a href="contacto.html" class="accesorio-card__btn">Consultar</a>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="col-12 col-md-6">
-                        <article class="accesorio-card">
-                            <img class="accesorio-card__img" src="https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=300&q=80&fit=crop" alt="Zapato marrón Derby">
-                            <div class="accesorio-card__body">
-                                <h3 class="accesorio-card__titulo">Zapato Marrón Derby</h3>
-                                <p class="accesorio-card__precio">$2.800 / día</p>
-                                <p class="accesorio-card__desc">Cuero marrón miel. Ideal para trajes beige y grises.</p>
-                                <a href="contacto.html" class="accesorio-card__btn">Consultar</a>
-                            </div>
-                        </article>
-                    </div>
-
-                </div>
+                <div class="row g-3" id="grilla-calzado"></div>
             </div><!-- /bloque-calzado -->
 
         </div>
-    </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="site-footer">
@@ -205,37 +110,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../js/accesorios.js"></script>
 
-    <script>
-        const tabs       = document.querySelectorAll('.subcategorias-tabs__btn');
-        const bloqueCor  = document.getElementById('bloque-corbatas');
-        const bloqueCal  = document.getElementById('bloque-calzado');
-        const divider    = document.getElementById('divider-tabs');
-
-        tabs.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Marcar tab activo
-                tabs.forEach(b => b.classList.remove('activo'));
-                btn.classList.add('activo');
-
-                const tab = btn.dataset.tab;
-
-                if (tab === 'todos') {
-                    bloqueCor.style.display = '';
-                    bloqueCal.style.display = '';
-                    divider.style.display   = '';
-                } else if (tab === 'corbatas') {
-                    bloqueCor.style.display = '';
-                    bloqueCal.style.display = 'none';
-                    divider.style.display   = 'none';
-                } else if (tab === 'calzado') {
-                    bloqueCor.style.display = 'none';
-                    bloqueCal.style.display = '';
-                    divider.style.display   = 'none';
-                }
-            });
-        });
-    </script>
 
 </body>
 </html>
