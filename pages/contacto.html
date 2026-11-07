@@ -59,7 +59,7 @@
                         <div class="contacto-info__icono">📍</div>
                         <div>
                             <p class="contacto-info__nombre">Dirección</p>
-                            <p class="contacto-info__valor">Av. Corrientes 1234, Piso 2<br>Ciudad Autónoma de Buenos Aires</p>
+                            <p class="contacto-info__valor">Av. 18 de Julio 1450, local 3<br>Centro, Montevideo</p>
                         </div>
                     </div>
 
@@ -67,7 +67,7 @@
                         <div class="contacto-info__icono">📞</div>
                         <div>
                             <p class="contacto-info__nombre">Teléfono</p>
-                            <p class="contacto-info__valor"><a href="tel:+541112345678">+54 11 1234-5678</a></p>
+                            <p class="contacto-info__valor"><a href="tel:+59829001450">2900 1450</a><br><a href="https://wa.me/59899145014">WhatsApp 099 145 014</a></p>
                         </div>
                     </div>
 
@@ -75,7 +75,7 @@
                         <div class="contacto-info__icono">✉</div>
                         <div>
                             <p class="contacto-info__nombre">Email</p>
-                            <p class="contacto-info__valor"><a href="mailto:info@elitetrajes.com">info@elitetrajes.com</a></p>
+                            <p class="contacto-info__valor"><a href="mailto:info@elitetrajes.com.uy">info@elitetrajes.com.uy</a></p>
                         </div>
                     </div>
 
@@ -83,7 +83,7 @@
                         <div class="contacto-info__icono">🕐</div>
                         <div>
                             <p class="contacto-info__nombre">Horarios</p>
-                            <p class="contacto-info__valor">Lun–Vie: 9:00 — 19:00<br>Sáb: 10:00 — 16:00</p>
+                            <p class="contacto-info__valor">Lun–Vie: 10:00 — 19:00<br>Sáb: 10:00 — 14:00</p>
                         </div>
                     </div>
                 </div>
@@ -92,7 +92,7 @@
                 <div class="col-12 col-md-8">
                     <div class="contacto-form" id="reserva">
                         <h2 class="contacto-form__titulo">Reservá tu traje</h2>
-                        <p class="contacto-form__intro">Elegí las prendas y las fechas: el presupuesto se calcula al instante. Desde 3 días de alquiler tenés 10% de descuento.</p>
+                        <p class="contacto-form__intro">Elegí las prendas y las fechas: el presupuesto se calcula al instante. El precio es por alquiler e incluye hasta 3 días (por ejemplo, retirás el viernes y devolvés el lunes); cada día de más suma un 10%.</p>
 
                         <form id="form-reserva" novalidate>
                             <div class="row g-3">
@@ -111,7 +111,7 @@
 
                                 <div class="col-12 col-sm-6">
                                     <label class="form-label" for="telefono">Teléfono (opcional)</label>
-                                    <input type="tel" id="telefono" name="telefono" class="form-control" placeholder="+54 11 ..." autocomplete="tel" aria-describedby="error-telefono">
+                                    <input type="tel" id="telefono" name="telefono" class="form-control" placeholder="099 123 456" autocomplete="tel" aria-describedby="error-telefono">
                                     <p class="invalid-feedback" id="error-telefono"></p>
                                 </div>
 
@@ -119,8 +119,9 @@
                                     <label class="form-label" for="evento">Tipo de evento</label>
                                     <select id="evento" name="evento" class="form-select">
                                         <option value="">Seleccioná una opción</option>
-                                        <option value="Boda">Boda</option>
-                                        <option value="Graduación">Graduación</option>
+                                        <option value="Casamiento">Casamiento</option>
+                                        <option value="Fiesta de egresados">Fiesta de egresados</option>
+                                        <option value="Fiesta de 15">Fiesta de 15</option>
                                         <option value="Gala / Cena formal">Gala / Cena formal</option>
                                         <option value="Otro">Otro</option>
                                     </select>
@@ -157,9 +158,9 @@
                                         <dl class="presupuesto__filas">
                                             <div><dt>Prendas</dt><dd id="presu-prendas">0</dd></div>
                                             <div><dt>Días de alquiler</dt><dd id="presu-dias">—</dd></div>
-                                            <div><dt>Subtotal</dt><dd id="presu-subtotal">$0</dd></div>
-                                            <div><dt>Descuento</dt><dd id="presu-descuento">$0</dd></div>
-                                            <div class="presupuesto__total"><dt>Total</dt><dd id="presu-total">$0</dd></div>
+                                            <div><dt>Alquiler (hasta 3 días)</dt><dd id="presu-alquiler">$ 0</dd></div>
+                                            <div><dt>Días extra</dt><dd id="presu-recargo">$ 0</dd></div>
+                                            <div class="presupuesto__total"><dt>Total</dt><dd id="presu-total">$ 0</dd></div>
                                         </dl>
                                     </div>
                                 </div>
@@ -188,7 +189,7 @@
     <!-- MAPA -->
     <div class="container pb-5">
         <div class="mapa-placeholder">
-            <p>📍 Av. Corrientes 1234 — Buenos Aires</p>
+            <p>📍 Av. 18 de Julio 1450, Centro — Montevideo · a una cuadra de la Intendencia</p>
         </div>
     </div>
 
@@ -213,9 +214,9 @@
                 <div class="col-6 col-md-3">
                     <p class="site-footer__titulo">Contacto</p>
                     <ul class="site-footer__links">
-                        <li><a href="mailto:info@elitetrajes.com">info@elitetrajes.com</a></li>
-                        <li><a href="tel:+541112345678">+54 11 1234-5678</a></li>
-                        <li>Av. Corrientes 1234, CABA</li>
+                        <li><a href="mailto:info@elitetrajes.com.uy">info@elitetrajes.com.uy</a></li>
+                        <li><a href="tel:+59829001450">2900 1450</a></li>
+                        <li>Av. 18 de Julio 1450, Montevideo</li>
                     </ul>
                 </div>
             </div>

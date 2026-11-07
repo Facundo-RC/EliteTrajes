@@ -32,8 +32,8 @@ export function mostrarError(contenedor, mensaje) {
     );
 }
 
-export function precioPorDia(monto) {
-    return `${formatearPrecio(monto)} / día`;
+export function precioPorAlquiler(monto) {
+    return `${formatearPrecio(monto)} por alquiler`;
 }
 
 export function rutaReserva(producto, prefijo = '') {

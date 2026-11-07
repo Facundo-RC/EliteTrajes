@@ -1,7 +1,7 @@
 // Página de trajes: dibuja el catálogo y conecta búsqueda, filtro por estilo y orden.
 
 import { filtrarProductos, ordenarProductos, estilosDisponibles, ORDENES } from './catalogo.js';
-import { cargarProductos, crear, mostrarError, precioPorDia, rutaReserva } from './dom.js';
+import { cargarProductos, crear, mostrarError, precioPorAlquiler, rutaReserva } from './dom.js';
 
 const estado = { estilo: 'todos', texto: '', orden: 'destacados' };
 let trajes = [];
@@ -26,7 +26,7 @@ function crearTarjeta(traje) {
             ]),
             crear('div', { clase: 'traje-card__body' }, [
                 crear('h2', { clase: 'traje-card__titulo', texto: traje.nombre }),
-                crear('p', { clase: 'traje-card__precio', texto: precioPorDia(traje.precioDia) }),
+                crear('p', { clase: 'traje-card__precio', texto: precioPorAlquiler(traje.precio) }),
                 crear('p', { clase: 'traje-card__desc', texto: traje.descripcion }),
                 crear('a', {
                     clase: 'traje-card__btn',

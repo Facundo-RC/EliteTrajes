@@ -19,7 +19,7 @@ La interfaz es responsiva: en el celular los filtros se apilan y la grilla pasa 
 
 - **Buscar trajes** por estilo (clásico, slim fit, esmoquin), por texto —sin importar tildes ni mayúsculas— y ordenarlos por precio o nombre. Si no hay coincidencias, el sitio lo avisa y ofrece limpiar los filtros.
 - **Ver accesorios** separados en corbatas y calzado, con pestañas.
-- **Reservar**: el botón *Reservar* de cada prenda abre el formulario con esa prenda ya elegida. Al sumar prendas y fechas, el presupuesto se recalcula al instante, con 10% de descuento desde 3 días de alquiler.
+- **Reservar**: el botón *Reservar* de cada prenda abre el formulario con esa prenda ya elegida. Al sumar prendas y fechas, el presupuesto se recalcula al instante. Como en las casas de alquiler de Montevideo, el precio es por alquiler e incluye hasta 3 días; cada día de más suma un 10%.
 - **Validación clara**: cada campo muestra su propio error, el foco va al primero que falla, y no se puede retirar en una fecha pasada, devolver antes de retirar ni alquilar más de 14 días.
 - **Reservas guardadas**: al confirmar se genera un código (por ejemplo `ET-7K2QX`). La reserva queda guardada en el navegador, sigue ahí al recargar y se puede cancelar.
 
@@ -65,7 +65,7 @@ Las tarjetas se arman con `createElement` y `textContent`, nunca con `innerHTML`
 
 | Tipo | Cantidad | Qué cubre |
 |---|---|---|
-| Lógica (`npm test`) | 33 | Integridad de los datos, filtros, búsqueda con tildes, orden, cálculo de días (cambios de mes y de año), presupuesto y descuento, validación de cada campo, valores límite (hoy, 14 y 15 días) |
+| Lógica (`npm test`) | 34 | Integridad de los datos, filtros, búsqueda con tildes, orden, cálculo de días (cambios de mes y de año), presupuesto con días incluidos y recargo por días extra, validación de cada campo, valores límite (hoy, 14 y 15 días) |
 | Navegador (`npm run test:e2e`) | 18 × 2 dispositivos | Flujos completos en escritorio y en celular: filtrar, buscar, ordenar, pestañas, presupuesto, errores del formulario, confirmar, recargar y cancelar una reserva, sin errores de JavaScript y sin scroll horizontal |
 
 GitHub Actions corre las dos suites en cada push y además verifica que `css/main.css` esté compilado desde el Sass actual.
@@ -105,7 +105,9 @@ Y abrir `http://localhost:4173`.
 
 ## Créditos
 
-Fotos de [Unsplash](https://unsplash.com). La marca, los precios y los datos de contacto son ficticios.
+Fotos de [Unsplash](https://unsplash.com).
+
+La marca y los datos de contacto son ficticios, aunque el local se ubica en Montevideo. Los precios están en pesos uruguayos y toman como referencia los valores de alquiler de trajes publicados para Montevideo en 2026 (de $ 1.200 a $ 1.800 un traje básico, hasta $ 3.000 un corte moderno y más para los de diseñador). Los de esmoquin y accesorios son estimados.
 
 ## Licencia
 

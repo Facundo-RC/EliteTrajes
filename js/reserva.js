@@ -1,9 +1,12 @@
 // Reglas de negocio de la reserva: días, precio y validación.
 // No toca el DOM ni el almacenamiento, así se puede testear con Node.
 
+// Como en las casas de alquiler de Montevideo, el precio es por alquiler (por evento):
+// incluye hasta 3 días, por ejemplo retirar el viernes y devolver el lunes.
+// Cada día de más suma un porcentaje del precio de las prendas.
 export const DIAS_MAXIMOS = 14;
-export const DIAS_PARA_DESCUENTO = 3;
-export const PORCENTAJE_DESCUENTO = 10;
+export const DIAS_INCLUIDOS = 3;
+export const RECARGO_DIA_EXTRA = 10;
 
 const MS_POR_DIA = 24 * 60 * 60 * 1000;
 const PATRON_FECHA = /^\d{4}-\d{2}-\d{2}$/;
@@ -34,14 +37,17 @@ export function calcularDias(retiro, devolucion) {
     return Math.round((hasta - desde) / MS_POR_DIA);
 }
 
+// Sin días todavía elegidos el total es cero: el presupuesto arranca cuando hay fechas válidas.
 export function calcularPresupuesto(prendas, dias) {
-    const precioPorDia = prendas.reduce((total, prenda) => total + prenda.precioDia, 0);
-    const subtotal = precioPorDia * Math.max(dias, 0);
-    const descuento = dias >= DIAS_PARA_DESCUENTO
-        ? Math.round(subtotal * PORCENTAJE_DESCUENTO / 100)
-        : 0;
+    if (dias < 1) {
+        return { alquiler: 0, diasExtra: 0, recargo: 0, total: 0 };
+    }
 
-    return { precioPorDia, subtotal, descuento, total: subtotal - descuento };
+    const alquiler = prendas.reduce((total, prenda) => total + prenda.precio, 0);
+    const diasExtra = Math.max(dias - DIAS_INCLUIDOS, 0);
+    const recargo = Math.round(alquiler * RECARGO_DIA_EXTRA / 100 * diasExtra);
+
+    return { alquiler, diasExtra, recargo, total: alquiler + recargo };
 }
 
 // Devuelve un objeto { campo: mensaje }. Vacío = la reserva es válida.

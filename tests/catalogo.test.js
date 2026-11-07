@@ -14,11 +14,11 @@ const productos = JSON.parse(await readFile(new URL('../data/productos.json', im
 test('los datos del catálogo tienen todos los campos y ids únicos', () => {
     const ids = new Set();
     for (const producto of productos) {
-        for (const campo of ['id', 'tipo', 'estilo', 'nombre', 'precioDia', 'descripcion', 'imagen', 'alt']) {
+        for (const campo of ['id', 'tipo', 'estilo', 'nombre', 'precio', 'descripcion', 'imagen', 'alt']) {
             assert.ok(producto[campo] !== undefined && producto[campo] !== '', `${producto.id} sin ${campo}`);
         }
         assert.ok(['traje', 'corbata', 'calzado'].includes(producto.tipo), `tipo inválido en ${producto.id}`);
-        assert.ok(producto.precioDia > 0, `precio inválido en ${producto.id}`);
+        assert.ok(producto.precio > 0, `precio inválido en ${producto.id}`);
         assert.ok(!ids.has(producto.id), `id repetido: ${producto.id}`);
         ids.add(producto.id);
     }
@@ -52,7 +52,7 @@ test('la búsqueda no distingue mayúsculas ni tildes', () => {
 });
 
 test('la búsqueda también mira la descripción', () => {
-    const resultado = filtrarProductos(productos, { texto: 'graduaciones' });
+    const resultado = filtrarProductos(productos, { texto: 'egresados' });
     assert.deepEqual(resultado.map((p) => p.id), ['traje-gris-perla']);
 });
 
@@ -61,13 +61,13 @@ test('una búsqueda sin coincidencias devuelve una lista vacía', () => {
 });
 
 test('el precio máximo incluye el valor exacto', () => {
-    const resultado = filtrarProductos(productos, { tipos: ['traje'], precioMax: 8500 });
-    assert.deepEqual(resultado.map((p) => p.precioDia).sort(), [8200, 8500]);
+    const resultado = filtrarProductos(productos, { tipos: ['traje'], precioMax: 2000 });
+    assert.deepEqual(resultado.map((p) => p.precio).sort(), [1800, 2000, 2000]);
 });
 
 test('ordena por precio ascendente y descendente', () => {
-    const asc = ordenarProductos(productos, 'precio-asc').map((p) => p.precioDia);
-    const desc = ordenarProductos(productos, 'precio-desc').map((p) => p.precioDia);
+    const asc = ordenarProductos(productos, 'precio-asc').map((p) => p.precio);
+    const desc = ordenarProductos(productos, 'precio-desc').map((p) => p.precio);
     assert.deepEqual(asc, [...asc].sort((a, b) => a - b));
     assert.deepEqual(desc, [...asc].reverse());
 });
@@ -91,5 +91,6 @@ test('lista los estilos sin repetir', () => {
 test('normaliza y formatea', () => {
     assert.equal(normalizar('  Moño  '), 'mono');
     assert.equal(normalizar(undefined), '');
-    assert.equal(formatearPrecio(12000), '$12.000');
+    assert.equal(formatearPrecio(12000), '$ 12.000');
+    assert.equal(formatearPrecio(1800), '$ 1.800');
 });

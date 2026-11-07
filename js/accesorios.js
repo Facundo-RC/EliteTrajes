@@ -1,7 +1,7 @@
 // Página de accesorios: dibuja corbatas y calzado, y hace funcionar las pestañas.
 
 import { filtrarProductos } from './catalogo.js';
-import { cargarProductos, crear, mostrarError, precioPorDia, rutaReserva } from './dom.js';
+import { cargarProductos, crear, mostrarError, precioPorAlquiler, rutaReserva } from './dom.js';
 
 const BLOQUES = {
     corbatas: { tipos: ['corbata'], bloque: 'bloque-corbatas', grilla: 'grilla-corbatas' },
@@ -20,7 +20,7 @@ function crearTarjeta(accesorio) {
             }),
             crear('div', { clase: 'accesorio-card__body' }, [
                 crear('h3', { clase: 'accesorio-card__titulo', texto: accesorio.nombre }),
-                crear('p', { clase: 'accesorio-card__precio', texto: precioPorDia(accesorio.precioDia) }),
+                crear('p', { clase: 'accesorio-card__precio', texto: precioPorAlquiler(accesorio.precio) }),
                 crear('p', { clase: 'accesorio-card__desc', texto: accesorio.descripcion }),
                 crear('a', {
                     clase: 'accesorio-card__btn',

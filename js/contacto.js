@@ -8,7 +8,7 @@ import {
     validarReserva,
     generarCodigo,
     hoyComoTexto,
-    PORCENTAJE_DESCUENTO
+    RECARGO_DIA_EXTRA
 } from './reserva.js';
 import { cargarProductos, crear } from './dom.js';
 
@@ -84,7 +84,7 @@ function dibujarPrendas(preseleccionada) {
                     casilla,
                     crear('label', { clase: 'form-check-label', atributos: { for: `prenda-${producto.id}` } }, [
                         crear('span', { texto: producto.nombre }),
-                        crear('span', { clase: 'prendas__precio', texto: `${formatearPrecio(producto.precioDia)}/día` })
+                        crear('span', { clase: 'prendas__precio', texto: formatearPrecio(producto.precio) })
                     ])
                 ]);
             });
@@ -104,14 +104,14 @@ function actualizarPresupuesto() {
     const { retiro, devolucion, prendas } = leerFormulario();
     const dias = calcularDias(retiro, devolucion);
     const diasValidos = dias > 0 ? dias : 0;
-    const { subtotal, descuento, total } = calcularPresupuesto(prendas, diasValidos);
+    const { alquiler, diasExtra, recargo, total } = calcularPresupuesto(prendas, diasValidos);
 
     document.getElementById('presu-prendas').textContent = prendas.length;
     document.getElementById('presu-dias').textContent = diasValidos ? `${diasValidos}` : '—';
-    document.getElementById('presu-subtotal').textContent = formatearPrecio(subtotal);
-    document.getElementById('presu-descuento').textContent = descuento
-        ? `− ${formatearPrecio(descuento)} (${PORCENTAJE_DESCUENTO}%)`
-        : '$0';
+    document.getElementById('presu-alquiler').textContent = formatearPrecio(alquiler);
+    document.getElementById('presu-recargo').textContent = recargo
+        ? `${formatearPrecio(recargo)} (${diasExtra} ${diasExtra === 1 ? 'día' : 'días'} × ${RECARGO_DIA_EXTRA}%)`
+        : formatearPrecio(0);
     document.getElementById('presu-total').textContent = formatearPrecio(total);
 }
 

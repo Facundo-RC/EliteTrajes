@@ -11,8 +11,8 @@ import {
 } from '../js/reserva.js';
 
 const HOY = '2026-11-01';
-const traje = { id: 'traje', precioDia: 8500 };
-const corbata = { id: 'corbata', precioDia: 1200 };
+const traje = { id: 'traje', precio: 2000 };
+const corbata = { id: 'corbata', precio: 250 };
 
 const reservaValida = () => ({
     nombre: 'Facundo',
@@ -46,16 +46,19 @@ test('días con una fecha vacía da cero', () => {
     assert.equal(calcularDias('', '2026-11-12'), 0);
 });
 
-test('presupuesto sin descuento por debajo de 3 días', () => {
-    assert.deepEqual(calcularPresupuesto([traje, corbata], 2), {
-        precioPorDia: 9700, subtotal: 19400, descuento: 0, total: 19400
-    });
+test('el precio por alquiler cubre hasta 3 días sin recargo', () => {
+    const esperado = { alquiler: 2250, diasExtra: 0, recargo: 0, total: 2250 };
+    assert.deepEqual(calcularPresupuesto([traje, corbata], 1), esperado);
+    assert.deepEqual(calcularPresupuesto([traje, corbata], 3), esperado);
 });
 
-test('presupuesto con 10% de descuento desde 3 días', () => {
-    assert.deepEqual(calcularPresupuesto([traje], 3), {
-        precioPorDia: 8500, subtotal: 25500, descuento: 2550, total: 22950
-    });
+test('cada día después del tercero suma 10% del alquiler', () => {
+    assert.deepEqual(calcularPresupuesto([traje], 4), { alquiler: 2000, diasExtra: 1, recargo: 200, total: 2200 });
+    assert.deepEqual(calcularPresupuesto([traje, corbata], 5), { alquiler: 2250, diasExtra: 2, recargo: 450, total: 2700 });
+});
+
+test('el máximo de 14 días lleva 11 días de recargo', () => {
+    assert.equal(calcularPresupuesto([traje], 14).total, 2000 + 2200);
 });
 
 test('presupuesto vacío da cero', () => {

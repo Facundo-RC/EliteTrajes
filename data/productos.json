@@ -4,7 +4,7 @@
     "tipo": "traje",
     "estilo": "Clásico",
     "nombre": "Traje Negro Clásico",
-    "precioDia": 8500,
+    "precio": 1800,
     "descripcion": "Corte recto, tela italiana. Incluye saco y pantalón.",
     "imagen": "https://images.unsplash.com/photo-1618886614638-80e3c103d31a?q=80&w=670&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "alt": "Traje clásico negro"
@@ -14,8 +14,8 @@
     "tipo": "traje",
     "estilo": "Slim Fit",
     "nombre": "Traje Azul Marino Slim",
-    "precioDia": 9000,
-    "descripcion": "Corte entallado moderno, ideal para bodas y eventos.",
+    "precio": 2200,
+    "descripcion": "Corte entallado moderno, ideal para casamientos y eventos.",
     "imagen": "https://plus.unsplash.com/premium_photo-1661416725939-4bb32b3bebcb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8VHJhamUlMjBBenVsJTIwTWFyaW5vJTIwU2xpbXxlbnwwfHwwfHx8MA%3D%3D",
     "alt": "Traje azul marino"
   },
@@ -24,8 +24,8 @@
     "tipo": "traje",
     "estilo": "Clásico",
     "nombre": "Traje Gris Perla",
-    "precioDia": 8800,
-    "descripcion": "Elegante y versátil, perfecto para graduaciones.",
+    "precio": 2000,
+    "descripcion": "Elegante y versátil, perfecto para fiestas de egresados.",
     "imagen": "https://plus.unsplash.com/premium_photo-1661777346821-478b8ad1396e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8dHJhamUlMjBncmlzfGVufDB8fDB8fHww",
     "alt": "Traje gris perla"
   },
@@ -34,7 +34,7 @@
     "tipo": "traje",
     "estilo": "Esmoquin",
     "nombre": "Esmoquin Negro",
-    "precioDia": 12000,
+    "precio": 4500,
     "descripcion": "El clásico de las galas. Incluye saco, pantalón, camisa y moño.",
     "imagen": "https://images.unsplash.com/photo-1598808503746-f34c53b9323e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8RXNtb3F1aW4lMjBOZWdyb3xlbnwwfHwwfHx8MA%3D%3D",
     "alt": "Esmoquin negro"
@@ -44,7 +44,7 @@
     "tipo": "traje",
     "estilo": "Slim Fit",
     "nombre": "Traje Beige Verano",
-    "precioDia": 8200,
+    "precio": 2000,
     "descripcion": "Tela liviana y transpirable. Ideal para eventos al aire libre.",
     "imagen": "https://images.unsplash.com/photo-1670249040693-83d92a1be114?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8VHJhamUlMjBCZWlnZXxlbnwwfHwwfHx8MA%3D%3D",
     "alt": "Traje beige"
@@ -54,7 +54,7 @@
     "tipo": "traje",
     "estilo": "Clásico",
     "nombre": "Traje Blanco Novio",
-    "precioDia": 10500,
+    "precio": 3500,
     "descripcion": "Diseño exclusivo para el gran día. Tela premium.",
     "imagen": "https://images.unsplash.com/photo-1762485542340-9b465465c217?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8VHJhamUlMjBCbGFuY28lMjBOb3Zpb3xlbnwwfHwwfHx8MA%3D%3D",
     "alt": "Traje blanco novio"
@@ -64,7 +64,7 @@
     "tipo": "corbata",
     "estilo": "Corbata",
     "nombre": "Corbata Roja Seda",
-    "precioDia": 1200,
+    "precio": 300,
     "descripcion": "Seda natural, textura lisa. Ancho estándar.",
     "imagen": "https://images.unsplash.com/photo-1633353240079-d5197fdff535?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "alt": "Corbata roja seda"
@@ -74,8 +74,8 @@
     "tipo": "corbata",
     "estilo": "Corbata",
     "nombre": "Corbata Bordó Estampada",
-    "precioDia": 1400,
-    "descripcion": "Estampado floral sutil, ideal para bodas de otoño.",
+    "precio": 300,
+    "descripcion": "Estampado floral sutil, ideal para casamientos de otoño.",
     "imagen": "https://plus.unsplash.com/premium_photo-1723924810262-c67a0950f311?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "alt": "Corbata bordó estampada"
   },
@@ -84,7 +84,7 @@
     "tipo": "corbata",
     "estilo": "Corbata",
     "nombre": "Corbata Negra Clásica",
-    "precioDia": 1100,
+    "precio": 250,
     "descripcion": "La opción más versátil para cualquier evento formal.",
     "imagen": "https://images.unsplash.com/photo-1628009658182-6df033109021?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Q29yYmF0YSUyME5lZ3JhfGVufDB8fDB8fHww",
     "alt": "Corbata negra clásica"
@@ -94,7 +94,7 @@
     "tipo": "corbata",
     "estilo": "Moño",
     "nombre": "Moño Negro (Esmoquin)",
-    "precioDia": 900,
+    "precio": 300,
     "descripcion": "Moño de seda para esmoquin. Ajustable.",
     "imagen": "https://images.unsplash.com/photo-1522968439036-e6338d0ed84f?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "alt": "Moño negro esmoquin"
@@ -104,7 +104,7 @@
     "tipo": "corbata",
     "estilo": "Corbata",
     "nombre": "Corbata Azul Navy",
-    "precioDia": 1200,
+    "precio": 250,
     "descripcion": "Perfecta para combinar con traje gris o azul marino.",
     "imagen": "https://images.unsplash.com/photo-1754814973276-1e837ee69a45?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "alt": "Corbata azul navy"
@@ -114,8 +114,8 @@
     "tipo": "calzado",
     "estilo": "Calzado",
     "nombre": "Zapato Negro Oxford",
-    "precioDia": 2500,
-    "descripcion": "Cuero genuino. Tallas 38 a 46.",
+    "precio": 700,
+    "descripcion": "Cuero genuino. Talles 38 a 46.",
     "imagen": "https://images.unsplash.com/photo-1657863598793-7a46461dcd4d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "alt": "Zapato negro Oxford"
   },
@@ -124,7 +124,7 @@
     "tipo": "calzado",
     "estilo": "Calzado",
     "nombre": "Zapato Charol Gala",
-    "precioDia": 3200,
+    "precio": 900,
     "descripcion": "Charol brillante para esmoquin y galas formales.",
     "imagen": "https://images.unsplash.com/photo-1760616172899-0681b97a2de3?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "alt": "Zapato charol gala"
@@ -134,7 +134,7 @@
     "tipo": "calzado",
     "estilo": "Calzado",
     "nombre": "Zapato Marrón Derby",
-    "precioDia": 2800,
+    "precio": 700,
     "descripcion": "Cuero marrón miel. Ideal para trajes beige y grises.",
     "imagen": "https://images.unsplash.com/photo-1533867617858-e7b97e060509?w=300&q=80&fit=crop",
     "alt": "Zapato marrón Derby"

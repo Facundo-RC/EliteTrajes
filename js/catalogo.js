@@ -23,7 +23,7 @@ export function filtrarProductos(productos, { tipos = [], estilo = 'todos', text
     return productos.filter((producto) => {
         const coincideTipo = tipos.length === 0 || tipos.includes(producto.tipo);
         const coincideEstilo = estilo === 'todos' || producto.estilo === estilo;
-        const coincidePrecio = producto.precioDia <= precioMax;
+        const coincidePrecio = producto.precio <= precioMax;
         const coincideTexto = busqueda === ''
             || normalizar(`${producto.nombre} ${producto.descripcion}`).includes(busqueda);
 
@@ -36,9 +36,9 @@ export function ordenarProductos(productos, criterio = 'destacados') {
 
     switch (criterio) {
         case 'precio-asc':
-            return copia.sort((a, b) => a.precioDia - b.precioDia);
+            return copia.sort((a, b) => a.precio - b.precio);
         case 'precio-desc':
-            return copia.sort((a, b) => b.precioDia - a.precioDia);
+            return copia.sort((a, b) => b.precio - a.precio);
         case 'nombre':
             return copia.sort((a, b) => a.nombre.localeCompare(b.nombre, 'es'));
         default:
@@ -51,5 +51,6 @@ export function estilosDisponibles(productos) {
 }
 
 export function formatearPrecio(monto) {
-    return `$${Math.round(monto).toLocaleString('es-AR')}`;
+    // Pesos uruguayos con el formato local: $ 1.800
+    return `$ ${Math.round(monto).toLocaleString('es-UY')}`;
 }

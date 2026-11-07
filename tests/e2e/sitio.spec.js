@@ -56,8 +56,8 @@ test.describe('Catálogo de trajes', () => {
 
     test('ordena por precio de mayor a menor', async ({ page }) => {
         await page.getByLabel('Ordenar').selectOption('precio-desc');
-        await expect(page.locator('.traje-card__precio').first()).toHaveText('$12.000 / día');
-        await expect(page.locator('.traje-card__precio').last()).toHaveText('$8.200 / día');
+        await expect(page.locator('.traje-card__precio').first()).toHaveText('$ 4.500 por alquiler');
+        await expect(page.locator('.traje-card__precio').last()).toHaveText('$ 1.800 por alquiler');
     });
 
     test('el botón Reservar lleva a la reserva con la prenda elegida', async ({ page }) => {
@@ -111,15 +111,15 @@ test.describe('Reserva', () => {
         await expect(page.locator('#nombre')).toHaveAttribute('aria-invalid', 'true');
     });
 
-    test('calcula el presupuesto con descuento desde 3 días', async ({ page }) => {
+    test('calcula el presupuesto con recargo por los días extra', async ({ page }) => {
         await page.getByLabel(/Traje Gris Perla/).check();
         await page.getByLabel(/Corbata Negra Clásica/).check();
         await page.getByLabel('Retiro').fill(enDias(2));
-        await page.getByLabel('Devolución').fill(enDias(5));
-        await expect(page.locator('#presu-dias')).toHaveText('3');
-        await expect(page.locator('#presu-subtotal')).toHaveText('$29.700');
-        await expect(page.locator('#presu-descuento')).toHaveText('− $2.970 (10%)');
-        await expect(page.locator('#presu-total')).toHaveText('$26.730');
+        await page.getByLabel('Devolución').fill(enDias(7));
+        await expect(page.locator('#presu-dias')).toHaveText('5');
+        await expect(page.locator('#presu-alquiler')).toHaveText('$ 2.250');
+        await expect(page.locator('#presu-recargo')).toHaveText('$ 450 (2 días × 10%)');
+        await expect(page.locator('#presu-total')).toHaveText('$ 2.700');
     });
 
     test('no acepta una devolución anterior al retiro', async ({ page }) => {
