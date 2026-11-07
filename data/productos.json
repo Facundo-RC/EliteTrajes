@@ -86,8 +86,8 @@
     "nombre": "Corbata Negra Clásica",
     "precio": 250,
     "descripcion": "La opción más versátil para cualquier evento formal.",
-    "imagen": "https://images.unsplash.com/photo-1628009658182-6df033109021?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Q29yYmF0YSUyME5lZ3JhfGVufDB8fDB8fHww",
-    "alt": "Corbata negra clásica"
+    "imagen": "https://images.unsplash.com/photo-1717023281538-296e93299e3a?w=600&h=600&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.72&fp-z=2&q=80&auto=format",
+    "alt": "Corbata negra clásica con camisa blanca y traje negro"
   },
   {
     "id": "mono-negro-esmoquin",
